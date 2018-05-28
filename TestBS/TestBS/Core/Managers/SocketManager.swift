@@ -11,11 +11,10 @@ import SwiftyJSON
 
 class SocketManager {
 
-    var socket: WebSocket
+    let socket = WebSocket(url: URL(string: "ws://pbbouachour.fr:8080/openSocket")!)
     let userToken = 42
 
     init() {
-        socket = WebSocket(url: URL(string: "ws://pbbouachour.fr:8080/openSocket")!)
         socket.connect()
     }
 
@@ -38,9 +37,7 @@ class SocketManager {
             "UserToken" : userToken
         ]
 
-        sendData(json: json) {
-            print("getCarList write complete")
-        }
+        sendData(json: json, completion: nil)
     }
 
     func startCar(name: String) {
@@ -51,9 +48,7 @@ class SocketManager {
             "Payload" : payload,
             ]
 
-        sendData(json: json) {
-            print("startCar write complete")
-        }
+        sendData(json: json, completion: nil)
     }
 
     func stopCar() {
@@ -62,8 +57,6 @@ class SocketManager {
             "UserToken" : userToken
         ]
 
-        sendData(json: json) {
-            print("stopCar write complete")
-        }
+        sendData(json: json, completion: nil)
     }
 }

@@ -15,6 +15,8 @@ class CarViewModel: WebSocketDelegate {
 
     var socketManager = SocketManager()
 
+    var isCarStarted = false
+
     init(view: CarView) {
         self.view = view
         self.socketManager.socket.delegate = self
@@ -23,15 +25,21 @@ class CarViewModel: WebSocketDelegate {
     func startButtonClicked(carName: String) {
         if !socketManager.socket.isConnected {
             socketManager.socket.connect()
+            socketManager.socket.onConnect = {
+                self.socketManager.startCar(name: carName)
+            }
+        } else if !isCarStarted {
+            socketManager.startCar(name: carName)
         }
-        socketManager.startCar(name: carName)
     }
 
     func stopButtonClicked() {
         socketManager.stopCar()
+        isCarStarted = false
+        view.resetSpeedBoard()
     }
 
-    // MARK - WebSocketDelegate
+    // MARK: - WebSocketDelegate
 
     func websocketDidConnect(socket: WebSocketClient) {
         print("didConnect CarViewModel")
@@ -49,8 +57,8 @@ class CarViewModel: WebSocketDelegate {
             if let dataFromString = text.data(using: .utf8) {
                 let car = try JSON(data: dataFromString)
                 if let speed = car["CurrentSpeed"].int {
+                    isCarStarted = true
                     view.displayCurrentSpeed(speed: speed.description)
-                    print("Car speed \(speed.description)")
                 }
             }
         } catch let error {

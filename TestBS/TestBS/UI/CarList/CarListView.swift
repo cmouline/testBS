@@ -26,7 +26,7 @@ class CarListView: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
         tableView.dataSource = self
         tableView.delegate = self
-        
+
         viewModel = CarListViewModel(view: self)
     }
 
@@ -63,4 +63,3 @@ class CarListView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
     }
 }
-

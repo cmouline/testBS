@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E1CC0B790374139E680ECB9 /* Pods_TestBSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0A1630138F779099B1361D /* Pods_TestBSTests.framework */; };
+		AE54803220BC417300CA8FB2 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE54803120BC417300CA8FB2 /* FontAwesome.otf */; };
 		AE5B4A9D20B5650100DA7EE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5B4A9C20B5650100DA7EE5 /* AppDelegate.swift */; };
 		AE5B4A9F20B5650100DA7EE5 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5B4A9E20B5650100DA7EE5 /* CarListView.swift */; };
 		AE5B4AA220B5650100DA7EE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE5B4AA020B5650100DA7EE5 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		518AC5843780658A861AFD3A /* Pods-TestBSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestBSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestBSUITests/Pods-TestBSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		755F9207C47412E97FD58F85 /* Pods_TestBS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestBS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE54803120BC417300CA8FB2 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		AE5B4A9920B5650100DA7EE5 /* TestBS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5B4A9C20B5650100DA7EE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE5B4A9E20B5650100DA7EE5 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE54802F20BC415200CA8FB2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE54803320BC424000CA8FB2 /* Suporting Files */,
+				AE54803020BC416700CA8FB2 /* Font */,
+				AE5B4AA320B5650300DA7EE5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AE54803020BC416700CA8FB2 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AE54803120BC417300CA8FB2 /* FontAwesome.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		AE54803320BC424000CA8FB2 /* Suporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE5B4AA820B5650300DA7EE5 /* Info.plist */,
+			);
+			path = "Suporting Files";
+			sourceTree = "<group>";
+		};
 		AE5B4A9020B5650100DA7EE5 = {
 			isa = PBXGroup;
 			children = (
@@ -149,14 +177,13 @@
 		AE5B4A9B20B5650100DA7EE5 /* TestBS */ = {
 			isa = PBXGroup;
 			children = (
+				AE5B4A9C20B5650100DA7EE5 /* AppDelegate.swift */,
+				AE5B4AA520B5650300DA7EE5 /* LaunchScreen.storyboard */,
+				AE5B4AA020B5650100DA7EE5 /* Main.storyboard */,
 				AE5B4AD020B5943A00DA7EE5 /* Common */,
 				AEF7083E20B6C94300FFC57E /* Core */,
 				AEF7083F20B6C94F00FFC57E /* UI */,
-				AE5B4A9C20B5650100DA7EE5 /* AppDelegate.swift */,
-				AE5B4AA020B5650100DA7EE5 /* Main.storyboard */,
-				AE5B4AA320B5650300DA7EE5 /* Assets.xcassets */,
-				AE5B4AA520B5650300DA7EE5 /* LaunchScreen.storyboard */,
-				AE5B4AA820B5650300DA7EE5 /* Info.plist */,
+				AE54802F20BC415200CA8FB2 /* Resources */,
 			);
 			path = TestBS;
 			sourceTree = "<group>";
@@ -349,6 +376,7 @@
 			files = (
 				AE5B4AA720B5650300DA7EE5 /* LaunchScreen.storyboard in Resources */,
 				AE5B4AA420B5650300DA7EE5 /* Assets.xcassets in Resources */,
+				AE54803220BC417300CA8FB2 /* FontAwesome.otf in Resources */,
 				AE5B4AA220B5650100DA7EE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,11 +662,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXR92Q9H3H;
-				INFOPLIST_FILE = TestBS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				INFOPLIST_FILE = "$(SRCROOT)/TestBS/Resources/Suporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chloemoulinet.TestBS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -653,11 +678,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXR92Q9H3H;
-				INFOPLIST_FILE = TestBS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				INFOPLIST_FILE = "$(SRCROOT)/TestBS/Resources/Suporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chloemoulinet.TestBS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -674,11 +696,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXR92Q9H3H;
 				INFOPLIST_FILE = TestBSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chloemoulinet.TestBSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -696,11 +714,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXR92Q9H3H;
 				INFOPLIST_FILE = TestBSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chloemoulinet.TestBSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -717,11 +731,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXR92Q9H3H;
 				INFOPLIST_FILE = TestBSUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chloemoulinet.TestBSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -738,11 +748,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXR92Q9H3H;
 				INFOPLIST_FILE = TestBSUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chloemoulinet.TestBSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

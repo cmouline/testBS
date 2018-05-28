@@ -20,7 +20,7 @@ class CarListViewModel: WebSocketDelegate {
         self.socketManager.socket.delegate = self
     }
 
-    // MARK - WebSocketDelegate
+    // MARK: - WebSocketDelegate
 
     func websocketDidConnect(socket: WebSocketClient) {
         print("didConnect CarListViewModel")
