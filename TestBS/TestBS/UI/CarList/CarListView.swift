@@ -31,7 +31,7 @@ class CarListView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        viewModel.socketManager.socket.disconnect()
+        viewModel.disconnetFromSocket()
     }
 
     // MARK: - UITableViewDataSource

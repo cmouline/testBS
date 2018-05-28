@@ -22,6 +22,10 @@ class CarViewModel: WebSocketDelegate {
         self.socketManager.socket.delegate = self
     }
 
+    func disconnetFromSocket() {
+        socketManager.socket.disconnect()
+    }
+
     func startButtonClicked(carName: String) {
         if !socketManager.socket.isConnected {
             socketManager.socket.connect()
@@ -47,7 +51,6 @@ class CarViewModel: WebSocketDelegate {
 
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         print("didDisconnect CarViewModel : \(String(describing: error))")
-        socketManager.stopCar()
     }
 
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {

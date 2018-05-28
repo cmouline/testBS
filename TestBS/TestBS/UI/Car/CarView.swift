@@ -36,8 +36,7 @@ class CarView: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        viewModel.socketManager.stopCar()
-        viewModel.socketManager.socket.disconnect()
+        viewModel.disconnetFromSocket()
     }
 
     func displayCurrentSpeed(speed: String) {

@@ -22,10 +22,10 @@ class SocketManager {
         socket.disconnect()
     }
 
-    func sendData(json: JSON, completion: (()->())?) {
+    func sendData(json: JSON) {
         do {
             let data = try JSONSerialization.data(withJSONObject: json.object)
-            socket.write(data: data, completion: completion)
+            socket.write(data: data, completion: nil)
         } catch let error {
             print("Sending data to WS failed : \(error)")
         }
@@ -37,7 +37,7 @@ class SocketManager {
             "UserToken" : userToken
         ]
 
-        sendData(json: json, completion: nil)
+        sendData(json: json)
     }
 
     func startCar(name: String) {
@@ -48,7 +48,7 @@ class SocketManager {
             "Payload" : payload,
             ]
 
-        sendData(json: json, completion: nil)
+        sendData(json: json)
     }
 
     func stopCar() {
@@ -57,6 +57,6 @@ class SocketManager {
             "UserToken" : userToken
         ]
 
-        sendData(json: json, completion: nil)
+        sendData(json: json)
     }
 }

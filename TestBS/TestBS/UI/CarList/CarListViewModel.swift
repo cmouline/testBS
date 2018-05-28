@@ -20,6 +20,10 @@ class CarListViewModel: WebSocketDelegate {
         self.socketManager.socket.delegate = self
     }
 
+    func disconnetFromSocket() {
+        socketManager.socket.disconnect()
+    }
+
     // MARK: - WebSocketDelegate
 
     func websocketDidConnect(socket: WebSocketClient) {
